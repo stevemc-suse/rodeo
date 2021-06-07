@@ -1,0 +1,9 @@
+apiVersion: v2
+name: bookinfo
+description: Istio bookinfo app
+type: application
+version: 0.1.0
+appVersion: "1.16.2"
+maintainers:
+  - name: Rancher
+    url: https://github.com/rancher

@@ -1,0 +1,40 @@
+{{- if .Values.database.create }}
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mysql-secret
+  namespace: {{ .Release.Namespace }}
+type: Opaque
+data:
+  ROOT_PASSWORD: aUpLcEMzT0lKQjNvenlJcA==
+  DATABASE: d29yZHByZXNz
+  USER: d29yZHByZXNz
+  PASSWORD: MGxZTkFZemF5R29JVUNmQQ==
+---
+apiVersion: mysql.presslabs.org/v1alpha1
+kind: MysqlCluster
+metadata:
+  name: db
+  namespace: {{ .Release.Namespace }}
+spec:
+  replicas: {{ .Values.database.replicas }}
+  secretName: mysql-secret
+  mysqlVersion: "5.7"
+  minAvailable: "50%"
+  mysqlConf:
+    max_connections: "200"
+    innodb-buffer-pool-size: "256M"
+    tmp_table_size: 256M
+    max_heap_table_size: 256M
+  podSpec:
+    resources:
+      requests:
+        memory: 256Mi
+        cpu:    200m
+  volumeSpec:
+    persistentVolumeClaim:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: {{ .Values.database.size }}
+{{- end }}

@@ -1,0 +1,9 @@
+apiVersion: v2
+name: online-boutique
+description: A microservice online-boutique web shop to demo Istio
+type: application
+version: 0.2.0
+appVersion: "v0.2.3"
+maintainers:
+  - name: Rancher
+    url: https://github.com/rancher
