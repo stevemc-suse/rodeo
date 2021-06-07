@@ -24,6 +24,13 @@ jobs:
         with:
           version: v3.5.4
 
+      - name: Helm Repos
+        run: |
+          helm repo add grafana https://grafana.github.io/helm-charts
+          helm repo add presslabs https://presslabs.github.io/charts
+          helm repo add raphaelmonrouzeau https://raphaelmonrouzeau.github.io/charts/repository/
+          helm repo add bitnami https://charts.bitnami.com/bitnami
+
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.2.1
         env:
