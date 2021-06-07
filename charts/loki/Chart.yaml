@@ -9,7 +9,7 @@ icon: https://raw.githubusercontent.com/grafana/loki/master/docs/sources/logo.pn
 sources:
   - https://github.com/grafana/loki
 maintainers:
-  - name: Loki Maintainers
+  - name: Grafana
     email: lokiproject@googlegroups.com
   - name: Rancher
     url: https://github.com/rancher
