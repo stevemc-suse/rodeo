@@ -1,16 +1,17 @@
 questions:
 - variable: ingress.enabled
-  default: "false"
+  default: "true"
   description: "Create an ingress endpoint for this app"
   label: Enable Ingress
+  show_subquestion_if: true
   type: boolean
   group: "Ingress Configuration"
-- variable: ingress.host
-  default: ""
-  description: "Enter the DNS name for the ingress endpoint. Leave the default to automatically generate a valid DNS name."
-  type: string
-  label: Ingress Endpoint DNS
-  group: "Ingress Configuration"
+  subquestions:
+  - variable: ingress.host
+    default: "nip.io"
+    description: "Enter the DNS name for the ingress endpoint. Leave the default to automatically generate a valid DNS name."
+    type: string
+    label: Ingress Endpoint DNS
 - variable: app.localization.title
   default: "Rancher Demo App"
   description: "Customize the title displayed in the application UI"
@@ -33,15 +34,20 @@ questions:
   type: string
   label: Container Color
   group: "App Configuration"
-- variable: image.repository
-  default: "janeczku/rancher-demo"
-  description: "Specify the container image repository name"
-  type: string
-  label: Image Repository
-  group: "Image Configuration"
-- variable: image.tag
-  default: "latest"
-  description: "Specify the container image tag"
-  type: string
-  label: Image Tag
-  group: "Image Configuration"
+- variable: defaultImage
+  default: true
+  label: Use Default Image
+  type: boolean
+  show_subquestion_if: false
+  group: "Container Images"
+  subquestions:
+  - variable: image.repository
+    default: "bashofmann/rancher-demo"
+    description: "Specify the container image repository name"
+    type: string
+    label: Image Repository
+  - variable: image.tag
+    default: ""
+    description: "Specify the container image tag"
+    type: string
+    label: Image Tag
