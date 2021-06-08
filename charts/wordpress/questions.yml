@@ -7,7 +7,6 @@ categories:
 questions:
 - variable: defaultImage
   default: true
-  description: "Use default Docker image"
   label: Use Default Image
   type: boolean
   show_subquestion_if: false
@@ -20,17 +19,14 @@ questions:
     label: WordPress Image Name
   - variable: wordpress.image.tag
     default: "5.7.2-debian-10-r18"
-    description: "WordPress image tag"
     type: string
-    label: Image Tag
+    label: WordPress Image Tag
   - variable: wordpress.mariadb.image.repository
     default: "bitnami/mariadb"
-    description: "MariaDB image name"
     type: string
     label: MariaDB Image Name
   - variable: wordpress.mariadb.image.tag
     default: "10.3.22-debian-10-r44"
-    description: "MariaDB image tag"
     type: string
     label: MariaDB Image Tag
 - variable: wordpress.wordpressUsername
@@ -42,7 +38,7 @@ questions:
   group: "WordPress Settings"
 - variable: wordpress.wordpressPassword
   default: ""
-  description: "password will be auto-generated if not specified"
+  description: "Password, will be auto-generated if not specified"
   type: password
   label: WordPress Password
   group: "WordPress Settings"
@@ -74,12 +70,12 @@ questions:
     label: MariaDB User
   - variable: wordpress.mariadb.db.password
     default: ""
-    description: "password will be auto-generated if not specified"
+    description: "Password, will be auto-generated if not specified"
     type: password
     label: MariaDB Password
   - variable: wordpress.mariadb.rootUser.password
     default: ""
-    description: "root user password, will be auto-generated if not specified"
+    description: "Root user password, will be auto-generated if not specified"
     type: password
     label: MariaDB Root Password
 - variable: wordpress.externalDatabase.host
@@ -176,7 +172,7 @@ questions:
     required: true
     label: Hostname
 - variable: wordpress.service.type
-  default: "NodePort"
+  default: "ClusterIP"
   description: "WordPress Service type"
   type: enum
   show_if: "wordpress.ingress.enabled=false"
@@ -191,17 +187,15 @@ questions:
   subquestions:
   - variable: wordpress.service.nodePorts.http
     default: ""
-    description: "NodePort http port(to set explicitly, choose port between 30000-32767)"
+    description: "NodePort http port (to set explicitly, choose port between 30000-32767)"
     type: int
     min: 30000
     max: 32767
-    show_if: "wordpress.ingress.enabled=false&&wordpress.serviceType=NodePort"
     label: NodePort Http Port
   - variable: wordpress.service.nodePorts.https
     default: ""
-    description: "NodePort https port(to set explicitly, choose port between 30000-32767)"
+    description: "NodePort https port (to set explicitly, choose port between 30000-32767)"
     type: int
     min: 30000
     max: 32767
-    show_if: "wordpress.ingress.enabled=false&&wordpress.serviceType=NodePort"
     label: NodePort Https Port
