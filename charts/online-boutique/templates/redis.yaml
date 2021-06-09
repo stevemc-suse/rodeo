@@ -70,6 +70,7 @@ kind: Service
 metadata:
   name: {{ include "online-boutique.fullname" . }}-redis-cart
   labels:
+    app: redis-cart
     {{- include "online-boutique.labels" . | nindent 4 }}
 spec:
   type: ClusterIP
