@@ -11,7 +11,7 @@ spec:
       targetPort: metrics
   namespaceSelector:
     matchNames:
-      - default
+      - {{ .Release.Namespace }}
   selector:
     matchLabels:
       app: redis-cart
