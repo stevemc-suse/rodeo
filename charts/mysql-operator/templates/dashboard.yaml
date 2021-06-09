@@ -131,7 +131,7 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "mysql_up{service=\"$service\"}",
+              "expr": "mysql_up{pod=\"$pod\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "refId": "A"
@@ -211,7 +211,7 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "mysql_global_status_uptime{service=\"$service\"}",
+              "expr": "mysql_global_status_uptime{pod=\"$pod\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "refId": "A"
@@ -267,14 +267,14 @@ data:
           "steppedLine": false,
           "targets": [
             {
-              "expr": "mysql_global_status_max_used_connections{service=\"$service\"}",
+              "expr": "mysql_global_status_max_used_connections{pod=\"$pod\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "current",
               "refId": "A"
             },
             {
-              "expr": "mysql_global_variables_max_connections{service=\"$service\"}",
+              "expr": "mysql_global_variables_max_connections{pod=\"$pod\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Max",
@@ -376,14 +376,14 @@ data:
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(mysql_global_status_innodb_data_reads{service=\"$service\"}[10m])",
+              "expr": "irate(mysql_global_status_innodb_data_reads{pod=\"$pod\"}[10m])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "reads",
               "refId": "A"
             },
             {
-              "expr": "irate(mysql_global_status_innodb_data_writes{service=\"$service\"}[10m])",
+              "expr": "irate(mysql_global_status_innodb_data_writes{pod=\"$pod\"}[10m])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "write",
@@ -472,14 +472,14 @@ data:
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(mysql_global_status_bytes_received{service=\"$service\"}[5m])",
+              "expr": "irate(mysql_global_status_bytes_received{pod=\"$pod\"}[5m])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "received",
               "refId": "A"
             },
             {
-              "expr": "irate(mysql_global_status_bytes_sent{service=\"$service\"}[5m])",
+              "expr": "irate(mysql_global_status_bytes_sent{pod=\"$pod\"}[5m])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "sent",
@@ -563,10 +563,10 @@ data:
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(mysql_global_status_commands_total{service=\"$service\"}[5m]) > 0",
+              "expr": "irate(mysql_global_status_commands_total{pod=\"$pod\"}[5m]) > 0",
               "format": "time_series",
               "intervalFactor": 1,
-              "legendFormat": "{{ command }} - {{ service }}",
+              "legendFormat": "{{ command }} - {{ pod }}",
               "refId": "A"
             }
           ],
@@ -647,7 +647,7 @@ data:
           "steppedLine": false,
           "targets": [
             {
-              "expr": "mysql_global_status_threads_running{service=\"$service\"} ",
+              "expr": "mysql_global_status_threads_running{pod=\"$pod\"} ",
               "format": "time_series",
               "intervalFactor": 1,
               "refId": "A"
@@ -745,7 +745,7 @@ data:
           "steppedLine": false,
           "targets": [
             {
-              "expr": "mysql_global_status_aborted_clients{service=\"$service\"}",
+              "expr": "mysql_global_status_aborted_clients{pod=\"$pod\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "refId": "B"
@@ -829,7 +829,7 @@ data:
           "steppedLine": false,
           "targets": [
             {
-              "expr": "mysql_global_status_aborted_connects{service=\"$service\"}",
+              "expr": "mysql_global_status_aborted_connects{pod=\"$pod\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "",
@@ -926,14 +926,14 @@ data:
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum(mysql_info_schema_table_size{component=\"data_length\",service=\"$service\"})",
+              "expr": "sum(mysql_info_schema_table_size{component=\"data_length\",pod=\"$pod\"})",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Tables",
               "refId": "A"
             },
             {
-              "expr": "sum(mysql_info_schema_table_size{component=\"index_length\",service=\"$service\"})",
+              "expr": "sum(mysql_info_schema_table_size{component=\"index_length\",pod=\"$pod\"})",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Indexes",
@@ -1017,7 +1017,7 @@ data:
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum(mysql_info_schema_table_rows{service=\"$service\"})",
+              "expr": "sum(mysql_info_schema_table_rows{pod=\"$pod\"})",
               "format": "time_series",
               "intervalFactor": 1,
               "refId": "A"
@@ -1069,7 +1069,7 @@ data:
       "style": "dark",
       "tags": [
         "Databases",
-        "backgroundservices"
+        "backgroundpods"
       ],
       "templating": {
         "list": [
@@ -1081,9 +1081,9 @@ data:
             "includeAll": false,
             "label": null,
             "multi": false,
-            "name": "service",
+            "name": "pod",
             "options": [],
-            "query": "label_values(mysql_up,service)",
+            "query": "label_values(mysql_up,pod)",
             "refresh": 1,
             "regex": "",
             "sort": 0,
