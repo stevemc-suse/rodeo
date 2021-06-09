@@ -1,4 +1,6 @@
 mysql-operator:
+  serviceMonitor:
+    enabled: true
   orchestrator:
     config:
       # `reset slave all` and `set read_only=0` on promoted master
@@ -14,6 +16,20 @@ mysql-operator:
           - /
 
 database:
+  name: "db"
   create: true
   size: 1Gi
   replicas: 3
+  rootPassword: ""
+  appDatabase: ""
+  appUser: ""
+  appPassword: ""
+
+rancher:
+  createGrafanaDashboard: true
+  createAlerts: true
+
+ingress:
+  auth:
+    user: admin
+    password: admin
