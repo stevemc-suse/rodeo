@@ -1,3 +1,4 @@
+{{- if .Values.rancher.addGrafanaDatasource }}
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -51,3 +52,4 @@ roleRef:
   kind: ClusterRole
   name: cluster-admin
   apiGroup: rbac.authorization.k8s.io
+{{- end }}

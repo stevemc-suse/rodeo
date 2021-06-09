@@ -10,3 +10,9 @@ loki:
     requests:
       cpu: 100m
       memory: 128Mi
+
+rancher:
+  createOutput: true
+  createFlow: true
+  addGrafanaDatasource: true
+  createGrafanaDashboard: true

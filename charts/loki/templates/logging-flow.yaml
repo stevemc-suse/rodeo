@@ -1,3 +1,4 @@
+{{- if .Values.rancher.createFlow }}
 apiVersion: logging.banzaicloud.io/v1beta1
 kind: ClusterFlow
 metadata:
@@ -6,3 +7,4 @@ metadata:
 spec:
   globalOutputRefs:
     - {{ include "loki.fullname" . }}
+{{- end }}
