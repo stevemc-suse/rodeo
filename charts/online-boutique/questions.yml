@@ -16,3 +16,8 @@ questions:
     type: boolean
     label: Deploy load generator
     group: Features
+  - variable: monitoring.enabled
+    default: true
+    type: boolean
+    label: Configure Monitoring
+    group: Features

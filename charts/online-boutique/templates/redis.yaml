@@ -50,6 +50,17 @@ spec:
           requests:
             cpu: 70m
             memory: 200Mi
+{{- if .Values.monitoring.enabled}}
+      - name: redis-exporter
+        image: oliver006/redis_exporter:latest
+        ports:
+        - containerPort: 9121
+          name: metrics
+        readinessProbe:
+          periodSeconds: 5
+          tcpSocket:
+            port: 9121
+{{- end }}
       volumes:
       - name: redis-data
         emptyDir: {}
@@ -68,3 +79,8 @@ spec:
   - name: redis
     port: 6379
     targetPort: 6379
+{{- if .Values.monitoring.enabled}}
+  - name: metrics
+    port: 9121
+    targetPort: 9121
+{{- end }}

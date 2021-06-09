@@ -15,3 +15,6 @@ ingress:
 
 loadGenerator:
   enabled: true
+
+monitoring:
+  enabled: true
