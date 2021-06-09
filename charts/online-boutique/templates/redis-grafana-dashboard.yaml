@@ -7,7 +7,7 @@ metadata:
   labels:
     grafana_dashboard: "1"
 data:
-  redis.json: |
+  redis.json: {{`|
     {
       "__inputs": [
       ],
@@ -1449,5 +1449,5 @@ data:
       "timezone": "browser",
       "title": "Redis Dashboard for Prometheus Redis Exporter 1.x",
       "version": 14
-    }
+    }`}}
 {{- end }}
