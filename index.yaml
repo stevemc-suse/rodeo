@@ -3,6 +3,20 @@ entries:
   bookinfo:
   - apiVersion: v2
     appVersion: 1.16.2
+    created: "2021-06-11T14:22:24.340944229Z"
+    description: Istio bookinfo app
+    digest: f196f8bab5be61fa6765433073e38c204e420b6f776e5278b4a2047cc0d67a0e
+    icon: https://upload.wikimedia.org/wikipedia/commons/a/a1/Istio-bluelogo-nobackground-unframed.svg
+    maintainers:
+    - name: Rancher
+      url: https://github.com/rancher
+    name: bookinfo
+    type: application
+    urls:
+    - https://github.com/bashofmann/rodeo/releases/download/bookinfo-0.2.0/bookinfo-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: 1.16.2
     created: "2021-06-07T15:29:55.382894678Z"
     description: Istio bookinfo app
     digest: 032ea55497fd5b6919554a69d41d4f5c190f4488c9c337372959182c2c1ceae6
@@ -99,6 +113,20 @@ entries:
   nginx:
   - apiVersion: v2
     appVersion: 1.21.0
+    created: "2021-06-11T14:22:24.784640803Z"
+    description: A plain nginx
+    digest: a25277af232305c913b806905692a2ba5ff1185c77e246fae22e04b5a498285f
+    icon: https://upload.wikimedia.org/wikipedia/commons/c/c5/Nginx_logo.svg
+    maintainers:
+    - name: Rancher
+      url: https://github.com/rancher
+    name: nginx
+    type: application
+    urls:
+    - https://github.com/bashofmann/rodeo/releases/download/nginx-0.2.0/nginx-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: 1.21.0
     created: "2021-06-07T15:29:55.891526303Z"
     description: A plain nginx
     digest: 786215a4e13f93235f202b781a22929c6a8ec59e30a1eba0ed3d772141d2c940
@@ -111,6 +139,20 @@ entries:
     - https://github.com/bashofmann/rodeo/releases/download/nginx-0.1.0/nginx-0.1.0.tgz
     version: 0.1.0
   online-boutique:
+  - apiVersion: v2
+    appVersion: v0.2.3
+    created: "2021-06-11T14:22:24.891477146Z"
+    description: A microservice online-boutique web shop to demo Istio
+    digest: 5d568eff36fc9d86f42cfd749e773d5dc7b9f7676f496e748cf87135c0c766a2
+    icon: https://raw.githubusercontent.com/GoogleCloudPlatform/microservices-demo/master/src/frontend/static/icons/Hipster_HeroLogoCyan.svg
+    maintainers:
+    - name: Rancher
+      url: https://github.com/rancher
+    name: online-boutique
+    type: application
+    urls:
+    - https://github.com/bashofmann/rodeo/releases/download/online-boutique-0.3.0/online-boutique-0.3.0.tgz
+    version: 0.3.0
   - apiVersion: v2
     appVersion: v0.2.3
     created: "2021-06-07T15:29:55.988587565Z"
@@ -127,6 +169,20 @@ entries:
   quake-kube:
   - apiVersion: v2
     appVersion: v1.0.7
+    created: "2021-06-11T14:22:24.982212693Z"
+    description: Quake 3 Arena in a browser
+    digest: 09c9b00de527268d88f6f6e281dab4e6687684acb2a4f41e4b86f47a48083fac
+    icon: https://upload.wikimedia.org/wikipedia/de/7/78/Quake_III_Arena_Logo.svg
+    maintainers:
+    - name: Rancher
+      url: https://github.com/rancher
+    name: quake-kube
+    type: application
+    urls:
+    - https://github.com/bashofmann/rodeo/releases/download/quake-kube-0.2.0/quake-kube-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: v1.0.7
     created: "2021-06-07T15:29:56.101293342Z"
     description: Quake 3 Arena in a browser
     digest: 1e54f39573f0633a9aec584a2093e0800362145ff34a460f96254e9722753d01
@@ -139,6 +195,19 @@ entries:
     - https://github.com/bashofmann/rodeo/releases/download/quake-kube-0.1.0/quake-kube-0.1.0.tgz
     version: 0.1.0
   rancher-demo:
+  - apiVersion: v2
+    appVersion: 1.0.6
+    created: "2021-06-11T14:22:25.080599586Z"
+    description: Rancher demo application, web UI showing scale of containers
+    digest: 2dad3498cb3816de3a764b0931a9e9523007c0bfe20ccae119f62188e59d1765
+    icon: https://rancher.com/img/brand-guidelines/assets/logos/png/color/rancher-logo-stacked-color.png
+    maintainers:
+    - name: Rancher
+      url: https://github.com/rancher
+    name: rancher-demo
+    urls:
+    - https://github.com/bashofmann/rodeo/releases/download/rancher-demo-2.1.0/rancher-demo-2.1.0.tgz
+    version: 2.1.0
   - apiVersion: v2
     appVersion: 1.0.6
     created: "2021-06-07T15:29:56.228786791Z"
@@ -186,4 +255,4 @@ entries:
     urls:
     - https://github.com/bashofmann/rodeo/releases/download/wordpress-11.0.13/wordpress-11.0.13.tgz
     version: 11.0.13
-generated: "2021-06-07T15:29:56.380648711Z"
+generated: "2021-06-11T14:22:25.207749052Z"
