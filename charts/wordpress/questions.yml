@@ -113,22 +113,22 @@ questions:
   label: External Database Port
   show_if: "wordpress.mariadb.enabled=false"
   group: "Database Settings"
-- variable: wordpress.mariadb.master.persistence.enabled
+- variable: wordpress.mariadb.primary.persistence.enabled
   default: false
   description: "Enable persistent volume for MariaDB"
   type: boolean
   required: true
   label: MariaDB Persistent Volume Enabled
-  show_if: "wordpress.mariadb.enabled=true"
+  show_if: "wordpress.mariadb.primary.persistence.enabled=true"
   show_subquestion_if: true
   group: "Database Settings"
   subquestions:
-  - variable: wordpress.mariadb.master.persistence.size
+  - variable: wordpress.mariadb.primary.persistence.size
     default: "8Gi"
     description: "MariaDB Persistent Volume Size"
     type: string
     label: MariaDB Volume Size
-  - variable: wordpress.mariadb.master.persistence.storageClass
+  - variable: wordpress.mariadb.primary.persistence.storageClass
     default: ""
     description: "If undefined or null, uses the default StorageClass. Default to null"
     type: storageclass
