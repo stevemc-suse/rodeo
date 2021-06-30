@@ -31,6 +31,29 @@ entries:
   loki:
   - apiVersion: v2
     appVersion: v2.2.0
+    created: "2021-06-30T11:46:01.035941596Z"
+    dependencies:
+    - name: loki
+      repository: https://grafana.github.io/helm-charts
+      version: 2.x.x
+    description: 'Loki: like Prometheus, but for logs.'
+    digest: 3912ddb8692ece2901ccf6c17699ae69f6c6b6a614e0e677f0be6ed2ceab4bfc
+    home: https://grafana.com/loki
+    icon: https://raw.githubusercontent.com/grafana/loki/master/docs/sources/logo.png
+    maintainers:
+    - email: lokiproject@googlegroups.com
+      name: Grafana
+    - name: Rancher
+      url: https://github.com/rancher
+    name: loki
+    sources:
+    - https://github.com/grafana/loki
+    type: application
+    urls:
+    - https://github.com/bashofmann/rodeo/releases/download/loki-2.5.1/loki-2.5.1.tgz
+    version: 2.5.1
+  - apiVersion: v2
+    appVersion: v2.2.0
     created: "2021-06-07T15:29:55.512860556Z"
     dependencies:
     - name: loki
@@ -53,6 +76,32 @@ entries:
     - https://github.com/bashofmann/rodeo/releases/download/loki-2.5.0/loki-2.5.0.tgz
     version: 2.5.0
   mysql-operator:
+  - apiVersion: v2
+    appVersion: 0.4.0
+    created: "2021-06-30T11:46:01.566488226Z"
+    dependencies:
+    - name: mysql-operator
+      repository: https://presslabs.github.io/charts
+      version: 0.x.x
+    description: MySQL Operator from Presslabs
+    digest: e990b458d55e6377a775c3e650213e2368780947abf9d9e862c094c5649a14ce
+    home: https://github.com/presslabs/mysql-operator
+    icon: https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg
+    keywords:
+    - mysql
+    - percona
+    - orchestrator
+    - presslabs
+    maintainers:
+    - name: Rancher
+      url: https://github.com/rancher
+    name: mysql-operator
+    sources:
+    - https://github.com/presslabs/mysql-operator.git
+    type: application
+    urls:
+    - https://github.com/bashofmann/rodeo/releases/download/mysql-operator-0.4.1/mysql-operator-0.4.1.tgz
+    version: 0.4.1
   - apiVersion: v2
     appVersion: 0.4.0
     created: "2021-06-07T15:29:55.650411329Z"
@@ -79,6 +128,37 @@ entries:
     - https://github.com/bashofmann/rodeo/releases/download/mysql-operator-0.4.0/mysql-operator-0.4.0.tgz
     version: 0.4.0
   nfs-server-provisioner:
+  - apiVersion: v2
+    appVersion: 2.3.0
+    created: "2021-06-30T11:46:01.777958908Z"
+    dependencies:
+    - name: nfs-server-provisioner
+      repository: https://raphaelmonrouzeau.github.io/charts/repository/
+      version: 1.x.x
+    description: nfs-server-provisioner is an out-of-tree dynamic provisioner for
+      Kubernetes. You can use it to quickly & easily deploy shared storage that works
+      almost anywhere.
+    digest: 1c53f446a565ba5f4999c1a61cd49c7dad7f7b656314a4d7bf52d3e43701965c
+    home: https://github.com/kubernetes-sigs/nfs-ganesha-server-and-external-provisioner
+    keywords:
+    - nfs
+    - storage
+    maintainers:
+    - email: kiall@macinnes.ie
+      name: kiall
+    - email: kvapss@gmail.com
+      name: kvaps
+    - email: joaocc-dev@live.com
+      name: joaocc
+    - name: Rancher
+      url: https://github.com/rancher
+    name: nfs-server-provisioner
+    sources:
+    - https://github.com/kubernetes-sigs/nfs-ganesha-server-and-external-provisioner/tree/master/deploy/helm
+    type: application
+    urls:
+    - https://github.com/bashofmann/rodeo/releases/download/nfs-server-provisioner-1.2.2/nfs-server-provisioner-1.2.2.tgz
+    version: 1.2.2
   - apiVersion: v2
     appVersion: 2.3.0
     created: "2021-06-07T15:29:55.758990292Z"
@@ -226,6 +306,39 @@ entries:
       category: CMS
     apiVersion: v2
     appVersion: 5.7.2
+    created: "2021-06-30T11:46:02.084482534Z"
+    dependencies:
+    - name: wordpress
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.x.x
+    description: Web publishing platform for building blogs and websites.
+    digest: 049ffe0e9205ebee1730c1fc42a65ba4e232a0c667efef0d202dff0d0a815819
+    home: https://github.com/bitnami/charts/tree/master/bitnami/wordpress
+    icon: https://bitnami.com/assets/stacks/wordpress/img/wordpress-stack-220x234.png
+    keywords:
+    - application
+    - blog
+    - cms
+    - http
+    - php
+    - web
+    - wordpress
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    - name: Rancher
+      url: https://github.com/rancher
+    name: wordpress
+    sources:
+    - https://github.com/bitnami/bitnami-docker-wordpress
+    - https://wordpress.org/
+    urls:
+    - https://github.com/bashofmann/rodeo/releases/download/wordpress-11.0.14/wordpress-11.0.14.tgz
+    version: 11.0.14
+  - annotations:
+      category: CMS
+    apiVersion: v2
+    appVersion: 5.7.2
     created: "2021-06-07T15:29:56.380571907Z"
     dependencies:
     - name: wordpress
@@ -255,4 +368,4 @@ entries:
     urls:
     - https://github.com/bashofmann/rodeo/releases/download/wordpress-11.0.13/wordpress-11.0.13.tgz
     version: 11.0.13
-generated: "2021-06-11T14:22:25.207749052Z"
+generated: "2021-06-30T11:46:02.084588533Z"
