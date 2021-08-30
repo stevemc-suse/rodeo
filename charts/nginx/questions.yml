@@ -7,7 +7,7 @@ questions:
     group: "Services and Load Balancing"
     subquestions:
       - variable: ingress.hosts.0.host
-        default: "nip.io"
+        default: "sslip.io"
         type: hostname
         required: true
         label: Hostname

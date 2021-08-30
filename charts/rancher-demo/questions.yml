@@ -8,7 +8,7 @@ questions:
   group: "Ingress Configuration"
   subquestions:
   - variable: ingress.host
-    default: "nip.io"
+    default: "sslip.io"
     description: "Enter the DNS name for the ingress endpoint. Leave the default to automatically generate a valid DNS name."
     type: string
     label: Ingress Endpoint DNS

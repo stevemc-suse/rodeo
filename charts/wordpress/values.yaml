@@ -4,7 +4,7 @@ wordpress:
 
   ingress:
     enabled: true
-    hostname: nip.io
+    hostname: sslip.io
     annotations:
       # https://github.com/bitnami/charts/issues/2111
       nginx.ingress.kubernetes.io/configuration-snippet: |
