@@ -46,6 +46,8 @@ jobs:
         uses: actions/setup-go@v2
 
       - name: Generate index.html
+        env:
+          GO111MODULE: on
         run: |
           go install github.com/halkeye/helm-repo-html@v0.0.8
           $GOPATH/bin/helm-repo-html
