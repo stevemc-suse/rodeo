@@ -1,4 +1,4 @@
-replicaCount: 7
+replicaCount: 3
 
 image:
   repository: bashofmann/rancher-demo
